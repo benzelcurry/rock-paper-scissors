@@ -12,6 +12,8 @@
         3.3. Use console.log() to display results of each round and final winner
         3.4. Use prompt() to get input from user */
 
+
+// determine the computer's choice
 function computerPlay() {
     const choices = ["Rock", "Paper", "Scissors"];
 
@@ -19,6 +21,7 @@ function computerPlay() {
     return choices[random];
 }
 
+// determine the winner of a round
 function playRound(playerSelection, computerSelection) {
 
     // declare variables for player and computer scores
@@ -56,5 +59,14 @@ function playRound(playerSelection, computerSelection) {
         } else {
             return "Draw! Both users selected scissors.";
         }
+    }
+}
+
+// play the game
+function game() {
+    for (let i = 0; i < 5; i++) {
+        // take prompt from player and convert to lowercase
+        let playerChoice = prompt("Pick rock, paper, or scissors.");
+        let playerSelection = playerChoice.toLowerCase();
     }
 }
