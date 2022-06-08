@@ -1,1 +1,1 @@
-# rock-paper-scissors
+Rock, paper, scissors interactive web browser game for The Odin Project.
