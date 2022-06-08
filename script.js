@@ -20,18 +20,41 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
+    // declare variables for player and computer scores
     let playerScore = 0;
     let computerScore = 0;
 
+    // determine results of round
     if (playerSelection == "rock") {
         if (computerSelection == "rock") {
-            return "Draw! Both users selected rock."
+            return "Draw! Both users selected rock.";
+        } else if (computerSelection == "paper") {
+            return "You lose! Paper beats rock.";
+            computerScore++;
+        } else {
+            return "You win! Rock beats scissors.";
+            playerScore++;
         }
-        else if (computerSelection == "paper") {
-            return "You lose! Paper beats rock."
+    } else if (playerSelection == "paper") {
+        if (computerSelection == "rock") {
+            return "You win! Paper beats rock.";
+            playerScore++;
+        } else if (computerSelection == "paper") {
+            return "Draw! Both users selected paper.";
+        } else {
+            return "You lose! Scissors beats paper.";
+            computerScore++;
         }
-        else {
-            return "You win! Rock beats scissors."
+    } else {
+        if (computerSelection == "rock") {
+            return "You lose! Rock beats scissors.";
+            computerScore++;
+        } else if (computerSelection == "paper") {
+            return "You win! Scissors beats paper."
+            playerScore++;
+        } else {
+            return "Draw! Both users selected scissors.";
         }
     }
 }
