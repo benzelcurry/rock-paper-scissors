@@ -27,8 +27,6 @@ function computerPlay() {
 // determine the winner of a round
 function playRound(playerSelection, computerSelection) {
 
-    // declare variables for player and computer scores
-
     // determine results of round
     if (playerSelection == "rock") {
         if (computerSelection == "rock") {
@@ -79,22 +77,24 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
         // take prompt from player and convert to lowercase
-        let computerSelection = computerPlay();
         let playerChoice = prompt("Pick rock, paper, or scissors.");
         let playerSelection = playerChoice.toLowerCase();
+        // convert computer's choice to lowercase
+        let computerChoice = computerPlay();
+        let computerSelection = computerChoice.toLowerCase();
 
         playRound(playerSelection, computerSelection);
         console.log(`Player score: ${playerScore} Computer score: ${computerScore}`);
-
+    
         if (i == 4) {
             if (playerScore == computerScore) {
-                console.log("It's a draw; nobody wins.");
+                console.log(`It's a draw; nobody wins. Player score: ${playerScore} Computer score: ${computerScore}`);
                 return;
             } else if (playerScore > computerScore) {
-                console.log("You win!");
+                console.log(`You win! Player score: ${playerScore} Computer score: ${computerScore}`);
                 return;
             } else {
-                console.log("You lose!");
+                console.log(`You lose! Player score: ${playerScore} Computer score: ${computerScore}`);
                 return;
             }
         }
